@@ -8,6 +8,13 @@
       "when": 1753966043870,
       "tag": "0000_famous_vertigo",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1753997175923,
+      "tag": "0001_special_supreme_intelligence",
+      "breakpoints": true
     }
   ]
 }

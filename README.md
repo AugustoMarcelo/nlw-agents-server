@@ -11,6 +11,7 @@ This is the backend application developed during the NLW Agents event by Rockets
 - [Drizzle ORM](https://orm.drizzle.team/) - TypeScript ORM
 - [Zod](https://zod.dev/) - TypeScript-first schema validation
 - [Biome](https://biomejs.dev/) - Toolchain for web projects
+- [Google AI (Gemini)](https://ai.google.dev/) - AI model integration
 
 ## 📦 Project Structure
 
@@ -60,6 +61,8 @@ src/
 
 - `npm run dev` - Start the development server with hot reload
 - `npm start` - Start the production server
+- `npm run db:generate` - Generate database migrations
+- `npm run db:migrate` - Apply database migrations
 - `npm run db:seed` - Seed the database with initial data
 
 ## 🗄️ Environment Variables
@@ -68,8 +71,20 @@ Create a `.env` file in the root directory with the following variables:
 
 ```env
 DATABASE_URL=postgresql://user:password@localhost:5432/database
+GOOGLE_API_KEY=your-google-ai-api-key
 ```
 
 ## 📝 API Documentation
 
 The API uses Fastify with TypeScript and Zod for type-safe routes and input validation. Endpoints are organized in the `src/http/routes` directory.
+
+### Available Endpoints
+
+- `GET /health` - Health check endpoint
+- `GET /rooms` - List all rooms
+- `POST /rooms` - Create a new room
+- `GET /rooms/:roomId/questions` - Get questions for a specific room
+- `POST /rooms/:roomId/questions` - Create a question in a room
+- `POST /rooms/:roomId/audio` - Upload audio file for processing
+
+All endpoints that accept data use JSON format, except for the upload endpoint which accepts multipart/form-data.
